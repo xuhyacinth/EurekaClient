@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xu.eureka.client.mapper.ImagesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xu.eureka.client.entity.Images">
+        <id column="iid" property="iid" />
+        <result column="fid" property="fid" />
+        <result column="tag" property="tag" />
+        <result column="type" property="type" />
+        <result column="name" property="name" />
+        <result column="useable" property="useable" />
+        <result column="img_introduce_short" property="imgIntroduceShort" />
+        <result column="img_introduce_long" property="imgIntroduceLong" />
+        <result column="img_abs_path" property="imgAbsPath" />
+        <result column="img_url_path" property="imgUrlPath" />
+        <result column="img_create_date" property="imgCreateDate" />
+        <result column="img_update_date" property="imgUpdateDate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        iid, fid, tag, type, name, useable, img_introduce_short, img_introduce_long, img_abs_path, img_url_path, img_create_date, img_update_date
+    </sql>
+
+</mapper>

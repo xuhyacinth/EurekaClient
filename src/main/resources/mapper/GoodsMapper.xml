@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xu.eureka.client.mapper.GoodsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xu.eureka.client.entity.Goods">
+        <id column="gid" property="gid" />
+        <result column="fid" property="fid" />
+        <result column="tag" property="tag" />
+        <result column="type" property="type" />
+        <result column="useable" property="useable" />
+        <result column="name" property="name" />
+        <result column="price" property="price" />
+        <result column="discount" property="discount" />
+        <result column="goods_date_generation" property="goodsDateGeneration" />
+        <result column="goods_date_guarantee" property="goodsDateGuarantee" />
+        <result column="goods_introduce_short" property="goodsIntroduceShort" />
+        <result column="goods_introduce_long" property="goodsIntroduceLong" />
+        <result column="pub_img_abs_path" property="pubImgAbsPath" />
+        <result column="pub_img_url_path" property="pubImgUrlPath" />
+        <result column="imgs_abs_path" property="imgsAbsPath" />
+        <result column="imgs_url_path" property="imgsUrlPath" />
+        <result column="create_date" property="createDate" />
+        <result column="update_date" property="updateDate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        gid, fid, tag, type, useable, name, price, discount, goods_date_generation, goods_date_guarantee, goods_introduce_short, goods_introduce_long, pub_img_abs_path, pub_img_url_path, imgs_abs_path, imgs_url_path, create_date, update_date
+    </sql>
+
+</mapper>

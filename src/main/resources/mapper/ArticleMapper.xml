@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xu.eureka.client.mapper.ArticleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xu.eureka.client.entity.Article">
+        <id column="aid" property="aid" />
+        <result column="tag" property="tag" />
+        <result column="type" property="type" />
+        <result column="name" property="name" />
+        <result column="detail" property="detail" />
+        <result column="article" property="article" />
+        <result column="useable" property="useable" />
+        <result column="article_abs_path" property="articleAbsPath" />
+        <result column="article_url_path" property="articleUrlPath" />
+        <result column="create_date" property="createDate" />
+        <result column="update_date" property="updateDate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        aid, tag, type, name, detail, article, useable, article_abs_path, article_url_path, create_date, update_date
+    </sql>
+
+</mapper>

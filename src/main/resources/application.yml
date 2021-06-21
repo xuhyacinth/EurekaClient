@@ -1,0 +1,77 @@
+# 服务端口
+server:
+  port: 9000
+  servlet:
+    context-path: /
+  zipkin:
+    base-url: http://192.168.0.6:9411
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/*/*/mapper/*Mapper.xml
+  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.xu.eureka.client.entity
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #配置返回数据库(column下划线命名&&返回java实体是驼峰命名)，自动匹配无需as（没开启这个，SQL需要写as： select user_id as userId）
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    #配置JdbcTypeForNull, oracle数据库必须配置
+    jdbc-type-for-null: 'null'
+
+spring:
+  # zipkin 服务地址
+  zipkin:
+    base-url: http://192.168.0.6:9411
+  # zipkin 采样率
+  sleuth:
+    sampler: 0.1
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/,classpath:/META-INF/resources/,classpath:/META-INF/resources/webjars/
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    # 服务名字
+    name: EurekeClient
+  mail:
+    jndi-name:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/spring?serverTimezone=UTC&characterEncoding=utf8&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 下面为连接池的补充设置，应用到上面所有数据源中
+    # 初始化大小，最小，最大
+    dbcp2:
+      # 建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，
+      test-while-idle: true
+      # 初始化创建的连接数
+      initial-size: 5
+      # 最小空闲连接数
+      min-idle: 5
+      # 配置获取连接等待超时的时间
+      max-wait-millis: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 30000
+      # 用来检测连接是否有效的sql，要求是一个查询语句，常用select 'x'。
+      validation-query: select 'x';
+      # 查询超时配置
+      validation-query-timeout: 1000
+      # 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+      test-on-borrow: false
+      # 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+      test-on-return: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      # 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+      pool-prepared-statements: false
