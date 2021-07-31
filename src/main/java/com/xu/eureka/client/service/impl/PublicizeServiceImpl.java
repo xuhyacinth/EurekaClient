@@ -1,10 +1,11 @@
 package com.xu.eureka.client.service.impl;
 
+import org.springframework.stereotype.Service;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xu.eureka.client.entity.Publicize;
 import com.xu.eureka.client.mapper.PublicizeMapper;
 import com.xu.eureka.client.service.PublicizeService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.stereotype.Service;
 
 /**
  * <p>

@@ -1,7 +1,8 @@
 package com.xu.eureka.client.entity;
 
-import java.sql.Date;
 import java.io.Serializable;
+import java.sql.Date;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

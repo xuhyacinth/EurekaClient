@@ -1,10 +1,11 @@
 package com.xu.eureka.client.mapper;
 
-import com.xu.eureka.client.entity.Apps;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import java.util.List;
+
 import org.apache.ibatis.annotations.Select;
 
-import java.util.List;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xu.eureka.client.entity.Apps;
 
 /**
  * <p>

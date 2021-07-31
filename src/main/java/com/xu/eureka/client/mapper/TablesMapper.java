@@ -1,7 +1,7 @@
 package com.xu.eureka.client.mapper;
 
-import com.xu.eureka.client.entity.Tables;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xu.eureka.client.entity.Tables;
 
 /**
  * <p>

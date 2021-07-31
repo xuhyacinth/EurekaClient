@@ -1,7 +1,7 @@
 package com.xu.eureka.client.service;
 
-import com.xu.eureka.client.entity.Goods;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xu.eureka.client.entity.Goods;
 
 /**
  * <p>
